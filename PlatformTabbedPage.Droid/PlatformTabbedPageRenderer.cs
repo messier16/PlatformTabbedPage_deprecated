@@ -19,16 +19,19 @@ namespace Messier16.Forms.Controls.Droid
 		}
 
 		Android.Graphics.Color SelectedColor = Android.Graphics.Color.Black;
-		Android.Graphics.Color UnselectedColor = Android.Graphics.Color.LightGray;// App.PrimaryColor.ToAndroid();
+	    private Android.Graphics.Color UnselectedColor = Xamarin.Forms.Color.Gray.Darken(10).ToAndroid();// App.PrimaryColor.ToAndroid();
 
 		protected override void OnElementChanged(ElementChangedEventArgs<TabbedPage> e)
 		{
 			base.OnElementChanged(e);
 
 			var formsTabbedPage = Element as PlatformTabbedPage;
-
+            
 			if (formsTabbedPage.HighlightedColor != default(Xamarin.Forms.Color))
 				SelectedColor = formsTabbedPage.HighlightedColor.ToAndroid();
+            if(formsTabbedPage.BarBackgroundColor != default(Xamarin.Forms.Color))
+                UnselectedColor = formsTabbedPage.BarBackgroundColor.Darken(10).ToAndroid();
+            
 		}
 
 
@@ -53,6 +56,8 @@ namespace Messier16.Forms.Controls.Droid
 			}
 			if (viewPager != null && tabLayout != null)
 			{
+                tabLayout.SetSelectedTabIndicatorColor(SelectedColor);
+                tabLayout.SetBackgroundColor(Android.Graphics.Color.LightGray);
 				tabLayout.SetTabTextColors(UnselectedColor, SelectedColor);
 				tabLayout.TabSelected += TabLayout_TabSelected;
 				tabLayout.TabUnselected += TabLayout_TabUnselected;

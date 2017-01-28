@@ -8,7 +8,8 @@ namespace TabbedPage
 	{
 		public HomeTabbedPage()
 		{
-			HighlightedColor = Color.FromHex("3C8A3F");
+            BarBackgroundColor = Color.FromHex("eeeef2");
+            HighlightedColor = Color.FromHex("3C8A3F");
 			Children.Add(new BasicContentPage("Feed") { Icon = "feed" });
 			Children.Add(new BasicContentPage("YouTube") { Icon = "youtube" });
 			Children.Add(new BasicContentPage("Twitter") { Icon = "twitter" });
