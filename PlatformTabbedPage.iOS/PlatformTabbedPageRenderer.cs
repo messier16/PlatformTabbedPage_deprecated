@@ -23,8 +23,8 @@ namespace Messier16.Forms.Controls.iOS
 
 			var formsTabbedPage = Element as PlatformTabbedPage;
 
-			if (formsTabbedPage.HighlightedColor != default(Color))
-				TabBar.TintColor = formsTabbedPage.HighlightedColor.ToUIColor();
+			if (formsTabbedPage.SelectedColor != default(Color))
+				TabBar.TintColor = formsTabbedPage.SelectedColor.ToUIColor();
 
 			if (formsTabbedPage != null)
 			{

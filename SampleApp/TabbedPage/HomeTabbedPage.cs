@@ -4,16 +4,17 @@ using Xamarin.Forms;
 
 namespace TabbedPage
 {
-	public class HomeTabbedPage : PlatformTabbedPage
-	{
-		public HomeTabbedPage()
-		{
-            BarBackgroundColor = Color.FromHex("eeeef2");
-            HighlightedColor = Color.FromHex("3C8A3F");
-			Children.Add(new BasicContentPage("Feed") { Icon = "feed" });
-			Children.Add(new BasicContentPage("YouTube") { Icon = "youtube" });
-			Children.Add(new BasicContentPage("Twitter") { Icon = "twitter" });
-			Children.Add(new BasicContentPage("Info") { Icon = "info" });
-		}
-	}
+    public class HomeTabbedPage : PlatformTabbedPage
+    {
+        public HomeTabbedPage()
+        {
+            BarBackgroundColor = App.BarBackgroundColors[3];
+            SelectedColor = App.SelectedColors[0];
+
+            Children.Add(new ConfigurationPage { Icon = "feed" });
+            Children.Add(new BasicContentPage("YouTube") { Icon = "youtube" });
+            Children.Add(new BasicContentPage("Twitter") { Icon = "twitter" });
+            Children.Add(new BasicContentPage("Info") { Icon = "info" });
+        }
+    }
 }

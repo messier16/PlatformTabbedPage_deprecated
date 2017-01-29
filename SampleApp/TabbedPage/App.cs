@@ -4,27 +4,48 @@ using Xamarin.Forms;
 
 namespace TabbedPage
 {
-	public class App : Application
-	{
-		public App()
-		{
+    public class App : Application
+    {
+        public static Color[] SelectedColors =
+        {
+            Color.FromHex("3C8A3F"),
+            Color.Green,
+            Color.Fuchsia,
+            Color.Orange,
+            Color.Teal,
+            Color.White
+        };
 
-			MainPage = new NavigationPage(new HomeTabbedPage());
-		}
+        public static Color[] BarBackgroundColors =
+        {
+            Color.FromHex("eeeef2"),
+            Color.FromHex("C8C8C8"),
+            Color.FromHex("F0F0F0"),
+            Color.FromHex("909090"),
+            Color.FromHex("A8A8A8"),
+        };
 
-		protected override void OnStart()
-		{
-			// Handle when your app starts
-		}
+        public static HomeTabbedPage HomeTabbedPage;
 
-		protected override void OnSleep()
-		{
-			// Handle when your app sleeps
-		}
+        public App()
+        {
+            HomeTabbedPage = new HomeTabbedPage();
+            MainPage = new NavigationPage(HomeTabbedPage);
+        }
 
-		protected override void OnResume()
-		{
-			// Handle when your app resumes
-		}
-	}
+        protected override void OnStart()
+        {
+            // Handle when your app starts
+        }
+
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
+
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
+    }
 }
