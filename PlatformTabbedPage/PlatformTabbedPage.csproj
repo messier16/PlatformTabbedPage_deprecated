@@ -8,7 +8,7 @@
     <UseMSBuildEngine>true</UseMSBuildEngine>
     <OutputType>Library</OutputType>
     <RootNamespace>Messier16.Forms.Controls</RootNamespace>
-    <AssemblyName>Messier16.Forms.Controls.PlatformTabPage</AssemblyName>
+    <AssemblyName>Messier16.Forms.Controls.PlatformTabbedPage</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
   </PropertyGroup>
