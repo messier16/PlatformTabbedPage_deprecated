@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>Messier16.Forms.PlatformTabbedPage</id>
+    <id>PlatformTabbedPage</id>
     <version>0.0.5</version>
     <title>Messier16 controls for Xamarin.Forms</title>
     <authors>Antonio Feregrino</authors>
