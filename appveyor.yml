@@ -1,9 +1,9 @@
-version: '0.0.4'
+version: '0.0.5'
 configuration: Release
 before_build:
   - nuget restore
 artifacts:
-  - path: PlatformTabPage.{version}.nupkg
+  - path: PlatformTabPage.0.0.5.nupkg
     name: nuget_pack
 after_build:
   - nuget pack "PlatformTabPage.nuspec" 
