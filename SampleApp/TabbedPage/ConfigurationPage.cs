@@ -20,6 +20,9 @@ namespace TabbedPage
             {"Both", BarBackgroundApplyTo.iOS |BarBackgroundApplyTo.Android }
         };
 
+		Label SelectedColorLabel;
+		Label BarbackgroundColorLabel;
+
         public ConfigurationPage()
         {
             Title = "Config";
@@ -27,19 +30,24 @@ namespace TabbedPage
             {
                 Text = "Randomize selected color"
             };
+			SelectedColorLabel = new Label { HorizontalTextAlignment = TextAlignment.Center };
+			randomSelectedColor.Clicked += (sender, args) =>
+			{
+				var ran = r.Next(0, App.SelectedColors.Length);
+				App.HomeTabbedPage.SelectedColor = App.SelectedColors[ran];
+				UpdateSelectedColors();
+			};
+
             var randomBarBackgroundColor = new Button()
             {
                 Text = "Randomize bar background color"
             };
-            randomSelectedColor.Clicked += (sender, args) =>
-            {
-                var ran = r.Next(0, App.SelectedColors.Length);
-                App.HomeTabbedPage.SelectedColor = App.SelectedColors[ran];
-            };
+			BarbackgroundColorLabel = new Label { HorizontalTextAlignment = TextAlignment.Center };
             randomBarBackgroundColor.Clicked += (sender, args) =>
             {
                 var ran = r.Next(0, App.BarBackgroundColors.Length);
                 App.HomeTabbedPage.BarBackgroundColor = App.BarBackgroundColors[ran];
+				UpdateSelectedColors();
             };
 
             var applyToDdl = new Picker();
@@ -48,6 +56,7 @@ namespace TabbedPage
             {
                 applyToDdl.Items.Add(applyToKey);
             }
+			applyToDdl.SelectedIndex = 1; // Android only
             applyToDdl.SelectedIndexChanged += (sender, args) =>
             {
                 App.HomeTabbedPage.BarBackgroundApplyTo = ApplyTo[list[applyToDdl.SelectedIndex]];
@@ -57,10 +66,26 @@ namespace TabbedPage
             {
                 Children = {
                     randomSelectedColor,
+					SelectedColorLabel,
                     randomBarBackgroundColor,
+					BarbackgroundColorLabel,
                     applyToDdl
                 }
             };
         }
-    }
+
+		protected override void OnAppearing()
+		{
+			UpdateSelectedColors();
+		}
+
+		void UpdateSelectedColors()
+		{
+			var selected = App.HomeTabbedPage.SelectedColor;
+			var background = App.HomeTabbedPage.BarBackgroundColor;
+
+			BarbackgroundColorLabel.Text = $"Background R:{background.R * 255:000} G:{background.G * 255:000} B:{background.B * 255:000}";
+			SelectedColorLabel.Text = $"Selected R:{selected.R * 255:000} G:{selected.G * 255:000} B:{selected.B * 255:000}";
+		}
+}
 }

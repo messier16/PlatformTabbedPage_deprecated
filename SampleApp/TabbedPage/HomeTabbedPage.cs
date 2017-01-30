@@ -4,12 +4,13 @@ using Xamarin.Forms;
 
 namespace TabbedPage
 {
-    public class HomeTabbedPage : PlatformTabbedPage
+	public class HomeTabbedPage : PlatformTabbedPage
     {
         public HomeTabbedPage()
         {
             BarBackgroundColor = App.BarBackgroundColors[3];
             SelectedColor = App.SelectedColors[0];
+			BarBackgroundApplyTo = BarBackgroundApplyTo.Android;
 
             Children.Add(new ConfigurationPage { Icon = "feed" });
             Children.Add(new BasicContentPage("YouTube") { Icon = "youtube" });
