@@ -8,6 +8,7 @@ using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms.Platform.Android.AppCompat;
 using Messier16.Forms.Controls.Droid;
 using Messier16.Forms.Controls;
+using Android.Graphics.Drawables;
 
 [assembly: ExportRenderer(typeof(PlatformTabbedPage), typeof(PlatformTabbedPageRenderer))]
 namespace Messier16.Forms.Controls.Droid
@@ -20,13 +21,17 @@ namespace Messier16.Forms.Controls.Droid
         }
 
         private PlatformTabbedPage FormsTabbedPage => Element as PlatformTabbedPage;
-
         Android.Graphics.Color _selectedColor = Android.Graphics.Color.Black;
         private static readonly Android.Graphics.Color DefaultUnselectedColor = Xamarin.Forms.Color.Gray.Darken().ToAndroid();
-        private Android.Graphics.Color _unselectedColor = DefaultUnselectedColor;// App.PrimaryColor.ToAndroid();
+		private static Android.Graphics.Color BarBackgroundDefault;
+        private Android.Graphics.Color _unselectedColor = DefaultUnselectedColor;
+
+		ViewPager _viewPager;
+		TabLayout _tabLayout;
 
         protected override void OnElementChanged(ElementChangedEventArgs<TabbedPage> e)
         {
+			
             base.OnElementChanged(e);
 
             // Get tabs
@@ -39,6 +44,7 @@ namespace Messier16.Forms.Controls.Droid
                     _tabLayout = (TabLayout)v;
             }
 
+
             if (e.OldElement != null)
             {
                 _tabLayout.TabSelected -= TabLayout_TabSelected;
@@ -47,31 +53,32 @@ namespace Messier16.Forms.Controls.Droid
 
             if (e.NewElement != null)
             {
+				BarBackgroundDefault = (_tabLayout.Background as ColorDrawable)?.Color ?? Android.Graphics.Color.Blue;
                 SetSelectedColor();
                 SetBarBackgroundColor();
                 _tabLayout.TabSelected += TabLayout_TabSelected;
                 _tabLayout.TabUnselected += TabLayout_TabUnselected;
+
+            	SetupTabColors();
+				SelectTab(0);
             }
 
         }
 
-        protected override void OnWindowVisibilityChanged(Android.Views.ViewStates visibility)
-        {
-            base.OnWindowVisibilityChanged(visibility);
+		void SelectTab(int position)
+		{
+			if (_tabLayout.TabCount > position)
+			{
+				_tabLayout.GetTabAt(position).Icon.SetColorFilter(_selectedColor, PorterDuff.Mode.SrcIn);
+				_tabLayout.GetTabAt(position).Select();
+			}
+			else 
+			{
+				throw new IndexOutOfRangeException();
+			}
+		}
 
 
-            SetupTabColors();
-
-            // Select first tab
-            if (_tabLayout.TabCount > 0)
-            {
-                _tabLayout.GetTabAt(0)?.Icon.SetColorFilter(_selectedColor, PorterDuff.Mode.SrcIn);
-                _tabLayout.GetTabAt(0)?.Select();
-            }
-        }
-
-        ViewPager _viewPager;
-        TabLayout _tabLayout;
         void SetupTabColors()
         {
             _tabLayout.SetSelectedTabIndicatorColor(_selectedColor);
@@ -105,15 +112,12 @@ namespace Messier16.Forms.Controls.Droid
                 case nameof(PlatformTabbedPage.BarBackgroundApplyTo):
                     SetBarBackgroundColor();
                     SetupTabColors();
-                    _tabLayout.GetTabAt(lastPosition).Icon?.SetColorFilter(_selectedColor, PorterDuff.Mode.SrcIn);
-                    _tabLayout.GetTabAt(lastPosition).Select();
-                    base.OnElementPropertyChanged(sender, new PropertyChangedEventArgs(nameof(PlatformTabbedPage.BarBackgroundColor)));
+					SelectTab(lastPosition);
                     break;
                 case nameof(PlatformTabbedPage.SelectedColor):
                     SetSelectedColor();
                     SetupTabColors();
-                    _tabLayout.GetTabAt(lastPosition).Icon?.SetColorFilter(_selectedColor, PorterDuff.Mode.SrcIn);
-                    _tabLayout.GetTabAt(lastPosition).Select();
+					SelectTab(lastPosition);
                     break;
                 default:
                     base.OnElementPropertyChanged(sender, e);
@@ -132,12 +136,14 @@ namespace Messier16.Forms.Controls.Droid
         {
             if (FormsTabbedPage.BarBackgroundApplyTo.HasFlag(BarBackgroundApplyTo.Android))
             {
+				_tabLayout.SetBackgroundColor(FormsTabbedPage.BarBackgroundColor.ToAndroid());
                 _unselectedColor = FormsTabbedPage.BarBackgroundColor != default(Xamarin.Forms.Color)
                     ? FormsTabbedPage.BarBackgroundColor.Darken().ToAndroid()
                     : DefaultUnselectedColor;
             }
             else
             {
+				_tabLayout.SetBackgroundColor(BarBackgroundDefault);
                 _unselectedColor = DefaultUnselectedColor;
             }
         }

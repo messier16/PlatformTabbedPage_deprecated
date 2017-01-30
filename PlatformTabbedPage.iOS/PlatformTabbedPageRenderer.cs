@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using Messier16.Forms.Controls;
 using Messier16.Forms.Controls.iOS;
 using UIKit;
@@ -15,43 +16,102 @@ namespace Messier16.Forms.Controls.iOS
 			var test = DateTime.UtcNow;
 		}
 
+		PlatformTabbedPage FormsTabbedPage => Element as PlatformTabbedPage;
+		UIColor DefaultTintColor;
+		UIColor DefaultBarBackgroundColor;
+
+		protected override void OnElementChanged(VisualElementChangedEventArgs e)
+		{
+			base.OnElementChanged(e);
+
+
+            if (e.OldElement != null)
+			{
+				e.OldElement.PropertyChanged -= OnElementPropertyChanged;
+			}
+			if (e.NewElement != null)
+			{
+				e.NewElement.PropertyChanged += OnElementPropertyChanged;
+			}
+
+			DefaultTintColor = TabBar.TintColor;
+			DefaultBarBackgroundColor = TabBar.BackgroundColor;
+		}
+
+		void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+				switch (e.PropertyName)
+				{
+					case nameof(PlatformTabbedPage.BarBackgroundColor):
+					case nameof(PlatformTabbedPage.BarBackgroundApplyTo):
+						SetBarBackgroundColor();
+						SetTintedColor();
+						break;
+					case nameof(PlatformTabbedPage.SelectedColor):
+						SetTintedColor();
+						break;
+					default:
+						//base.OnElementProp⁄ertyChanged(sender, e);
+						break;
+				}
+		}
+
 		public override void ViewWillAppear(bool animated)
 		{
 
 			if (TabBar?.Items == null)
 				return;
+			SetTintedColor();
+			SetBarBackgroundColor();
 
-			var formsTabbedPage = Element as PlatformTabbedPage;
-
-			if (formsTabbedPage.SelectedColor != default(Color))
-				TabBar.TintColor = formsTabbedPage.SelectedColor.ToUIColor();
-
-			if (formsTabbedPage != null)
+			if (FormsTabbedPage != null)
 			{
 				for (int i = 0; i < TabBar.Items.Length; i++)
 				{
-					SetActiveImage(TabBar.Items[i], formsTabbedPage.Children[i].Icon);
+					var item = TabBar.Items[i];
+					var icon = FormsTabbedPage.Children[i].Icon;
+
+					if (item == null)
+						return;
+					try
+					{
+						icon = icon + "_active";
+						if (item?.SelectedImage?.AccessibilityIdentifier == icon)
+							return;
+						item.SelectedImage = UIImage.FromBundle(icon);
+						item.SelectedImage.AccessibilityIdentifier = icon;
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine("Unable to set selected icon: " + ex);
+					}
 				}
 			}
 
 			base.ViewWillAppear(animated);
 		}
 
-		void SetActiveImage(UITabBarItem item, string icon)
+		private void SetTintedColor()
 		{
-			if (item == null)
-				return;
-			try
+			if (FormsTabbedPage.SelectedColor != default(Color))
+				TabBar.TintColor = FormsTabbedPage.SelectedColor.ToUIColor();
+			else
 			{
-				icon = icon + "_active";
-				if (item?.SelectedImage?.AccessibilityIdentifier == icon)
-					return;
-				item.SelectedImage = UIImage.FromBundle(icon);
-				item.SelectedImage.AccessibilityIdentifier = icon;
+				TabBar.TintColor = DefaultTintColor;
 			}
-			catch (Exception ex)
+		}
+
+		private void SetBarBackgroundColor()
+		{
+			if (FormsTabbedPage.BarBackgroundApplyTo.HasFlag(BarBackgroundApplyTo.iOS))
 			{
-				Console.WriteLine("Unable to set selected icon: " + ex);
+				TabBar.BackgroundColor= FormsTabbedPage.BarBackgroundColor != default(Xamarin.Forms.Color)
+					? FormsTabbedPage.BarBackgroundColor.ToUIColor()
+					: DefaultBarBackgroundColor;
+			}
+			else
+			{
+				TabBar.BackgroundColor = DefaultBarBackgroundColor;
 			}
 		}
 	}
