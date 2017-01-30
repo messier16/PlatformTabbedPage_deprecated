@@ -10,6 +10,7 @@ namespace TabbedPage
         {
             BarBackgroundColor = App.BarBackgroundColors[3];
             SelectedColor = App.SelectedColors[0];
+            BarBackgroundApplyTo = BarBackgroundApplyTo.Android;
 
             Children.Add(new ConfigurationPage { Icon = "feed" });
             Children.Add(new BasicContentPage("YouTube") { Icon = "youtube" });
