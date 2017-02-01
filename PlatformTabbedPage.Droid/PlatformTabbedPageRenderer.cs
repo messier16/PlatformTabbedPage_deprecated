@@ -69,7 +69,7 @@ namespace Messier16.Forms.Controls.Droid
 		{
 			if (_tabLayout.TabCount > position)
 			{
-				_tabLayout.GetTabAt(position).Icon.SetColorFilter(_selectedColor, PorterDuff.Mode.SrcIn);
+				_tabLayout.GetTabAt(position).Icon?.SetColorFilter(_selectedColor, PorterDuff.Mode.SrcIn);
 				_tabLayout.GetTabAt(position).Select();
 			}
 			else 
