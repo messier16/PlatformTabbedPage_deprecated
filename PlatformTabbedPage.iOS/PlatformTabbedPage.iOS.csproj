@@ -66,12 +66,6 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.3.3.180\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Badge.Abstractions">
-      <HintPath>..\SampleApp\..\packages\Plugin.Badge.1.0.1\lib\Xamarin.iOS10\Plugin.Badge.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Badge.iOS">
-      <HintPath>..\SampleApp\..\packages\Plugin.Badge.1.0.1\lib\Xamarin.iOS10\Plugin.Badge.iOS.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -79,7 +73,6 @@
   <ItemGroup>
     <Compile Include="PlatformTabbedPageRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BadgedPlatformTabbedPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

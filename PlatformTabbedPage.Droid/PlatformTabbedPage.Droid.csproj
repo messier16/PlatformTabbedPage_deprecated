@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Messier16.Forms.Controls.Droid</RootNamespace>
     <AssemblyName>Messier16.Forms.Controls.Droid.PlatformTabbedPage</AssemblyName>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
@@ -80,18 +80,11 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.3.3.180\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Badge.Abstractions">
-      <HintPath>..\SampleApp\..\packages\Plugin.Badge.1.0.1\lib\MonoAndroid\Plugin.Badge.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Badge.Droid">
-      <HintPath>..\SampleApp\..\packages\Plugin.Badge.1.0.1\lib\MonoAndroid\Plugin.Badge.Droid.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PlatformTabbedPageRenderer.cs" />
-    <Compile Include="BadgedPlatformTabbedPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
