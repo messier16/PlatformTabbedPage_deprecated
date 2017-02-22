@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>TabbedPage.Droid</RootNamespace>
     <AssemblyName>TabbedPage.Droid</AssemblyName>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -80,12 +80,6 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.3.180\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Badge.Abstractions">
-      <HintPath>..\..\packages\Plugin.Badge.1.0.1\lib\MonoAndroid\Plugin.Badge.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Badge.Droid">
-      <HintPath>..\..\packages\Plugin.Badge.1.0.1\lib\MonoAndroid\Plugin.Badge.Droid.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

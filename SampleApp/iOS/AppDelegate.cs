@@ -15,7 +15,6 @@ namespace TabbedPage.iOS
 		{
 			global::Xamarin.Forms.Forms.Init();
 			PlatformTabbedPageRenderer.Init();
-			BadgedPlatformTabbedPageRenderer.Init();
 			LoadApplication(new App());
 
 			return base.FinishedLaunching(app, options);

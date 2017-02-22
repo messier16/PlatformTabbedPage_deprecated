@@ -23,7 +23,6 @@ namespace TabbedPage.Droid
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 			PlatformTabbedPageRenderer.Init();
-			BadgedPlatformTabbedPageRenderer.Init();
 
 			LoadApplication(new App());
 		}

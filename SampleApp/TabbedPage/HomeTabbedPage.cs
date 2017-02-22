@@ -1,11 +1,10 @@
 ﻿using System;
 using Messier16.Forms.Controls;
-using Plugin.Badge.Abstractions;
 using Xamarin.Forms;
 
 namespace TabbedPage
 {
-	public class HomeTabbedPage : BadgedPlatformTabbedPage
+	public class HomeTabbedPage : PlatformTabbedPage
     {
         public HomeTabbedPage()
         {
@@ -14,7 +13,6 @@ namespace TabbedPage
 			BarBackgroundApplyTo = BarBackgroundApplyTo.Android;
 
 			var page = new ConfigurationPage { Icon = "feed" };
-			page.SetValue(TabBadge.BadgeTextProperty, 30);
 
             Children.Add(page);
             Children.Add(new BasicContentPage("YouTube") { Icon = "youtube" });
