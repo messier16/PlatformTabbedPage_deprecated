@@ -1,3 +1,4 @@
+version: '0.2.0'
 configuration: Release
 before_build:
   - nuget restore
@@ -16,6 +17,7 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 build:
+  project: JointPlatformTabbedPages.sln
   publish_nuget: true
   publish_nuget_symbols: false
   include_nuget_references: true
