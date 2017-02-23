@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>BadgedPlatformTabbedPage</id>
+    <version>0.2.0-badges</version>
+    <title>PlatformTabbedPage for Xamarin.Forms (Badges)</title>
+    <authors>Antonio Feregrino</authors>
+    <owners>Messier16</owners>
+    <projectUrl>https://github.com/Messier16/Forms.Controls</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/messier16/Forms.Controls/master/m16.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Make your Xamarin.Forms tabbed pages look more familiar to your users. built against 2.3.3.180</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Antonio Feregrino, 2017</copyright>
+    <tags>Xamarin.Forms, Xamarin, Checkbox, RatingBar</tags>
+    <dependencies>
+      <dependency id="Xamarin.Forms" version="2.3.3.180" />
+	  <dependency id="Plugin.Badge" version="1.0.1" />
+    </dependencies>
+  </metadata>  
+  <files>
+    <!--Core-->
+    <file src="BadgedPlatformTabbedPage\bin\Release\Messier16.Forms.Controls.PlatformTabbedPage.dll" target="lib\portable-net45+wp8+win8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Messier16.Forms.Controls.PlatformTabbedPage.dll" />   
+
+    <!--Xamarin.iOS-->
+    <file src="BadgedPlatformTabbedPage.iOS\bin\Release\Messier16.Forms.Controls.iOS.PlatformTabbedPage.dll" target="lib\MonoTouch10\Messier16.Forms.Controls.iOS.PlatformTabbedPage.dll" />
+	<file src="BadgedPlatformTabbedPage\bin\Release\Messier16.Forms.Controls.PlatformTabbedPage.dll" target="lib\MonoTouch10\Messier16.Forms.Controls.PlatformTabbedPage.dll" />
+
+    <!--Xamarin.iOSUnified-->	 
+    <file src="BadgedPlatformTabbedPage.iOS\bin\Release\Messier16.Forms.Controls.iOS.PlatformTabbedPage.dll" target="lib\Xamarin.iOS10\Messier16.Forms.Controls.iOS.PlatformTabbedPage.dll" />
+    <file src="BadgedPlatformTabbedPage\bin\Release\Messier16.Forms.Controls.PlatformTabbedPage.dll" target="lib\Xamarin.iOS10\Messier16.Forms.Controls.PlatformTabbedPage.dll" />
+    
+    <!-- Android-->
+    <file src="BadgedPlatformTabbedPage.Droid\bin\Release\Messier16.Forms.Controls.Droid.PlatformTabbedPage.dll" target="lib\MonoAndroid10\Messier16.Forms.Controls.Droid.PlatformTabbedPage.dll" />
+    <file src="BadgedPlatformTabbedPage\bin\Release\Messier16.Forms.Controls.PlatformTabbedPage.dll" target="lib\MonoAndroid10\Messier16.Forms.Controls.PlatformTabbedPage.dll" />
+
+  </files>
+</package>

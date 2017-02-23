@@ -1,12 +1,14 @@
-version: '0.1.6'
 configuration: Release
 before_build:
   - nuget restore
 artifacts:
-  - path: PlatformTabbedPage.0.1.6.nupkg
+  - path: PlatformTabbedPage.0.2.0.nupkg
+    name: nuget_pack
+  - path: BadgedPlatformTabbedPage.0.2.0-badges.nupkg
     name: nuget_pack
 after_build:
   - nuget pack "PlatformTabbedPage.nuspec" 
+  - nuget pack "BadgedPlatformTabbedPage.nuspec" 
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
@@ -14,7 +16,6 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 build:
-  project: PlatformTabbedPage.sln
   publish_nuget: true
   publish_nuget_symbols: false
   include_nuget_references: true
