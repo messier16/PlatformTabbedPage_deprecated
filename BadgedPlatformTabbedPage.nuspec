@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>BadgedPlatformTabbedPage</id>
-    <version>0.2.0-badges</version>
+    <version>0.2.1-badges</version>
     <title>PlatformTabbedPage for Xamarin.Forms (Badges)</title>
     <authors>Antonio Feregrino</authors>
     <owners>Messier16</owners>
