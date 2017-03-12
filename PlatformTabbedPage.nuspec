@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>PlatformTabbedPage</id>
-    <version>0.1.6</version>
+    <version>0.2.0</version>
     <title>PlatformTabbedPage for Xamarin.Forms</title>
     <authors>Antonio Feregrino</authors>
     <owners>Messier16</owners>
