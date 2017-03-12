@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Messier16.Forms.Controls.Droid;
 
 namespace TabbedPage.Droid
 {
@@ -21,6 +22,7 @@ namespace TabbedPage.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+			PlatformTabbedPageRenderer.Init();
 
 			LoadApplication(new App());
 		}

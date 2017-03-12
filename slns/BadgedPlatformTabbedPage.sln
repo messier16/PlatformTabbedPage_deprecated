@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadgedPlatformTabbedPage", "..\BadgedPlatformTabbedPage\BadgedPlatformTabbedPage.csproj", "{307BBBE5-5425-419F-B4ED-1363EF394FAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadgedPlatformTabbedPage.Droid", "..\BadgedPlatformTabbedPage.Droid\BadgedPlatformTabbedPage.Droid.csproj", "{5AEEDE22-E17E-4F72-8FB6-A1A0B88BD07C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadgedPlatformTabbedPage.iOS", "..\BadgedPlatformTabbedPage.iOS\BadgedPlatformTabbedPage.iOS.csproj", "{410A01A5-138E-4B8C-A145-2D529CD4A9FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{307BBBE5-5425-419F-B4ED-1363EF394FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{307BBBE5-5425-419F-B4ED-1363EF394FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{307BBBE5-5425-419F-B4ED-1363EF394FAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{307BBBE5-5425-419F-B4ED-1363EF394FAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AEEDE22-E17E-4F72-8FB6-A1A0B88BD07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AEEDE22-E17E-4F72-8FB6-A1A0B88BD07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AEEDE22-E17E-4F72-8FB6-A1A0B88BD07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AEEDE22-E17E-4F72-8FB6-A1A0B88BD07C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{410A01A5-138E-4B8C-A145-2D529CD4A9FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410A01A5-138E-4B8C-A145-2D529CD4A9FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410A01A5-138E-4B8C-A145-2D529CD4A9FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410A01A5-138E-4B8C-A145-2D529CD4A9FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
