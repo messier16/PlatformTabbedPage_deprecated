@@ -23,30 +23,34 @@ namespace TabbedPage
         Label SelectedColorLabel;
         Label BarbackgroundColorLabel;
 
+        private int _currentTabColor = 0;
+        private int _currentBackgroundTabColor = 0;
+
         public ConfigurationPage()
         {
             Title = "Config";
             var randomSelectedColor = new Button()
             {
-                Text = "Randomize selected color"
+                Text = "Change selected color"
             };
             SelectedColorLabel = new Label { HorizontalTextAlignment = TextAlignment.Center };
             randomSelectedColor.Clicked += (sender, args) =>
             {
-                var ran = r.Next(0, App.SelectedColors.Length);
-                App.HomeTabbedPage.SelectedColor = App.SelectedColors[ran];
+                _currentTabColor = ++_currentTabColor % App.SelectedColors.Length;
+                App.HomeTabbedPage.SelectedColor = App.SelectedColors[_currentTabColor];
                 UpdateSelectedColors();
             };
 
             var randomBarBackgroundColor = new Button()
             {
-                Text = "Randomize bar background color"
+                Text = "Change bar background color"
             };
             BarbackgroundColorLabel = new Label { HorizontalTextAlignment = TextAlignment.Center };
             randomBarBackgroundColor.Clicked += (sender, args) =>
             {
-                var ran = r.Next(0, App.BarBackgroundColors.Length);
-                App.HomeTabbedPage.BarBackgroundColor = App.BarBackgroundColors[ran];
+
+                _currentBackgroundTabColor = ++_currentBackgroundTabColor % App.BarBackgroundColors.Length;
+                App.HomeTabbedPage.BarBackgroundColor = App.BarBackgroundColors[_currentBackgroundTabColor];
                 UpdateSelectedColors();
             };
 
@@ -76,6 +80,8 @@ namespace TabbedPage
 
         protected override void OnAppearing()
         {
+            App.HomeTabbedPage.SelectedColor = App.SelectedColors[_currentTabColor];
+            App.HomeTabbedPage.BarBackgroundColor = App.BarBackgroundColors[_currentBackgroundTabColor];
             UpdateSelectedColors();
         }
 

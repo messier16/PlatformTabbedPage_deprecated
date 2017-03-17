@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace TabbedPage
 {
-    public class HomeTabbedPage : PlatformTabbedPage
+    public class HomeTabbedPage : BadgedPlatformTabbedPage
     {
         public HomeTabbedPage()
         {
@@ -15,7 +15,7 @@ namespace TabbedPage
             Children.Add(new ConfigurationPage { Icon = "feed" });
             Children.Add(new BasicContentPage("YouTube") { Icon = "youtube" });
             Children.Add(new BasicContentPage("Twitter") { Icon = "twitter" });
-            Children.Add(new BasicContentPage("Info") { Icon = "info" });
+            Children.Add(new BadgesConfigurationPage { Icon = "info" });
         }
     }
 }

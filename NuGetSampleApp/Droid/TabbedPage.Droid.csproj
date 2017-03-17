@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>TabbedPage.Droid</RootNamespace>
     <AssemblyName>TabbedPage.Droid</AssemblyName>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -38,12 +38,20 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Messier16.Forms.Controls.Droid.PlatformTabbedPage, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PlatformTabbedPage.0.1.5\lib\MonoAndroid10\Messier16.Forms.Controls.Droid.PlatformTabbedPage.dll</HintPath>
+    <Reference Include="Messier16.Forms.Controls.Droid.PlatformTabbedPage, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\BadgedPlatformTabbedPage.0.3.0-badges\lib\MonoAndroid10\Messier16.Forms.Controls.Droid.PlatformTabbedPage.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Messier16.Forms.Controls.PlatformTabbedPage, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PlatformTabbedPage.0.1.5\lib\MonoAndroid10\Messier16.Forms.Controls.PlatformTabbedPage.dll</HintPath>
+    <Reference Include="Messier16.Forms.Controls.PlatformTabbedPage, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\BadgedPlatformTabbedPage.0.3.0-badges\lib\MonoAndroid10\Messier16.Forms.Controls.PlatformTabbedPage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Badge.Abstractions, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Badge.1.0.1\lib\MonoAndroid\Plugin.Badge.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Badge.Droid, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Badge.1.0.1\lib\MonoAndroid\Plugin.Badge.Droid.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -88,12 +96,6 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.3.180\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Badge.Abstractions">
-      <HintPath>..\..\packages\Plugin.Badge.1.0.1\lib\MonoAndroid\Plugin.Badge.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Badge.Droid">
-      <HintPath>..\..\packages\Plugin.Badge.1.0.1\lib\MonoAndroid\Plugin.Badge.Droid.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

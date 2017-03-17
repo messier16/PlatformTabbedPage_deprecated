@@ -85,12 +85,20 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Messier16.Forms.Controls.iOS.PlatformTabbedPage, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PlatformTabbedPage.0.1.5\lib\Xamarin.iOS10\Messier16.Forms.Controls.iOS.PlatformTabbedPage.dll</HintPath>
+    <Reference Include="Messier16.Forms.Controls.iOS.PlatformTabbedPage, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\BadgedPlatformTabbedPage.0.3.0-badges\lib\Xamarin.iOS10\Messier16.Forms.Controls.iOS.PlatformTabbedPage.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Messier16.Forms.Controls.PlatformTabbedPage, Version=0.1.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PlatformTabbedPage.0.1.5\lib\Xamarin.iOS10\Messier16.Forms.Controls.PlatformTabbedPage.dll</HintPath>
+    <Reference Include="Messier16.Forms.Controls.PlatformTabbedPage, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\BadgedPlatformTabbedPage.0.3.0-badges\lib\Xamarin.iOS10\Messier16.Forms.Controls.PlatformTabbedPage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Badge.Abstractions, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Badge.1.0.1\lib\Xamarin.iOS10\Plugin.Badge.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Badge.iOS, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Badge.1.0.1\lib\Xamarin.iOS10\Plugin.Badge.iOS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -108,12 +116,6 @@
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.3.180\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Badge.Abstractions">
-      <HintPath>..\..\packages\Plugin.Badge.1.0.1\lib\Xamarin.iOS10\Plugin.Badge.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Badge.iOS">
-      <HintPath>..\..\packages\Plugin.Badge.1.0.1\lib\Xamarin.iOS10\Plugin.Badge.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
