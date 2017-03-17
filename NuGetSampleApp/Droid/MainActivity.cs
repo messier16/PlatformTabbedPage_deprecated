@@ -23,7 +23,9 @@ namespace TabbedPage.Droid
 			base.OnCreate(bundle);
            
             // If using badges:  
-            BadgedPlatformTabbedPageRenderer.Init();
+            BadgedPlatformTabbedPageRenderer.Init()
+            PlatformTabbedPageRenderer.Init();
+      BadgedPlatformTabbedPageRenderer.Init();
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 

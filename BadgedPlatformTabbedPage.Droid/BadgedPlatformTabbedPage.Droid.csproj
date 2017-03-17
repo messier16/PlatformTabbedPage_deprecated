@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5AEEDE22-E17E-4F72-8FB6-A1A0B88BD07C}</ProjectGuid>
+    <ProjectGuid>{CFC98E55-F759-4C23-AA02-AB36F27E72F6}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>Messier16.Forms.Controls.Droid</RootNamespace>
-    <AssemblyName>Messier16.Forms.Controls.Droid.PlatformTabbedPage</AssemblyName>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <AssemblyName>Messier16.Forms.Controls.Droid.BadgedPlatformTabbedPage</AssemblyName>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>

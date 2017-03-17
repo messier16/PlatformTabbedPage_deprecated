@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{307BBBE5-5425-419F-B4ED-1363EF394FAC}</ProjectGuid>
+    <ProjectGuid>{EFD5B211-322A-4F42-B5C6-B01875635AB3}</ProjectGuid>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UseMSBuildEngine>true</UseMSBuildEngine>
     <OutputType>Library</OutputType>
     <RootNamespace>Messier16.Forms.Controls</RootNamespace>
-    <AssemblyName>Messier16.Forms.Controls.PlatformTabbedPage</AssemblyName>
+    <AssemblyName>Messier16.Forms.Controls.BadgedPlatformTabbedPage</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
   </PropertyGroup>

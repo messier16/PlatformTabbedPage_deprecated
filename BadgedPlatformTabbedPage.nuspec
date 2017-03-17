@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>BadgedPlatformTabbedPage</id>
-    <version>0.3.0-badges</version>
+    <version>0.4.0-badges</version>
     <title>PlatformTabbedPage for Xamarin.Forms (Badges)</title>
     <authors>Antonio Feregrino</authors>
     <owners>Messier16</owners>
@@ -20,19 +20,19 @@
   </metadata>  
   <files>
     <!--Core-->
-    <file src="BadgedPlatformTabbedPage\bin\Release\Messier16.Forms.Controls.PlatformTabbedPage.dll" target="lib\portable-net45+wp8+win8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Messier16.Forms.Controls.PlatformTabbedPage.dll" />   
+    <file src="BadgedPlatformTabbedPage\bin\Release\Messier16.Forms.Controls.BadgedPlatformTabbedPage.dll" target="lib\portable-net45+wp8+win8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Messier16.Forms.Controls.BadgedPlatformTabbedPage.dll" />   
 
     <!--Xamarin.iOS-->
-    <file src="BadgedPlatformTabbedPage.iOS\bin\Release\Messier16.Forms.Controls.iOS.PlatformTabbedPage.dll" target="lib\MonoTouch10\Messier16.Forms.Controls.iOS.PlatformTabbedPage.dll" />
-	<file src="BadgedPlatformTabbedPage\bin\Release\Messier16.Forms.Controls.PlatformTabbedPage.dll" target="lib\MonoTouch10\Messier16.Forms.Controls.PlatformTabbedPage.dll" />
+    <file src="BadgedPlatformTabbedPage.iOS\bin\Release\Messier16.Forms.Controls.iOS.BadgedPlatformTabbedPage.dll" target="lib\MonoTouch10\Messier16.Forms.Controls.iOS.BadgedPlatformTabbedPage.dll" />
+	<file src="BadgedPlatformTabbedPage\bin\Release\Messier16.Forms.Controls.BadgedPlatformTabbedPage.dll" target="lib\MonoTouch10\Messier16.Forms.Controls.BadgedPlatformTabbedPage.dll" />
 
     <!--Xamarin.iOSUnified-->	 
-    <file src="BadgedPlatformTabbedPage.iOS\bin\Release\Messier16.Forms.Controls.iOS.PlatformTabbedPage.dll" target="lib\Xamarin.iOS10\Messier16.Forms.Controls.iOS.PlatformTabbedPage.dll" />
-    <file src="BadgedPlatformTabbedPage\bin\Release\Messier16.Forms.Controls.PlatformTabbedPage.dll" target="lib\Xamarin.iOS10\Messier16.Forms.Controls.PlatformTabbedPage.dll" />
+    <file src="BadgedPlatformTabbedPage.iOS\bin\Release\Messier16.Forms.Controls.iOS.BadgedPlatformTabbedPage.dll" target="lib\Xamarin.iOS10\Messier16.Forms.Controls.iOS.BadgedPlatformTabbedPage.dll" />
+    <file src="BadgedPlatformTabbedPage\bin\Release\Messier16.Forms.Controls.BadgedPlatformTabbedPage.dll" target="lib\Xamarin.iOS10\Messier16.Forms.Controls.BadgedPlatformTabbedPage.dll" />
     
     <!-- Android-->
-    <file src="BadgedPlatformTabbedPage.Droid\bin\Release\Messier16.Forms.Controls.Droid.PlatformTabbedPage.dll" target="lib\MonoAndroid10\Messier16.Forms.Controls.Droid.PlatformTabbedPage.dll" />
-    <file src="BadgedPlatformTabbedPage\bin\Release\Messier16.Forms.Controls.PlatformTabbedPage.dll" target="lib\MonoAndroid10\Messier16.Forms.Controls.PlatformTabbedPage.dll" />
+    <file src="BadgedPlatformTabbedPage.Droid\bin\Release\Messier16.Forms.Controls.Droid.BadgedPlatformTabbedPage.dll" target="lib\MonoAndroid10\Messier16.Forms.Controls.Droid.BadgedPlatformTabbedPage.dll" />
+    <file src="BadgedPlatformTabbedPage\bin\Release\Messier16.Forms.Controls.BadgedPlatformTabbedPage.dll" target="lib\MonoAndroid10\Messier16.Forms.Controls.BadgedPlatformTabbedPage.dll" />
 
   </files>
 </package>
